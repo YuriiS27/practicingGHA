@@ -1,14 +1,11 @@
 name: Issues Project
 
 
-on:
-   issues:
-     types: [opened, edited, closed]
-
+on: issues
 
 jobs:
- issue:
+ output-info:
    runs-on: ubuntu-latest
    steps:
        - name: Listening to the issues
-         run: echo "${{toJSON(github)}}"
+         run: echo "${{toJSON(github.event)}}"
