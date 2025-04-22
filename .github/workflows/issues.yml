@@ -1,0 +1,14 @@
+name: Issues Project
+
+
+on:
+   issues:
+     types: [opened, edited, closed]
+
+
+jobs:
+ issue:
+   runs-on: ubuntu-latest
+   steps:
+       - name: Listening to the issues
+         run: echo "${{toJSON(github)}}"
